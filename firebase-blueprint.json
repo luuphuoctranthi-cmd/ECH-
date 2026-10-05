@@ -1,0 +1,68 @@
+{
+  "entities": {
+    "resources": {
+      "title": "Resources (Phế phụ phẩm & Dòng tài nguyên)",
+      "description": "Danh mục phế phụ phẩm, năng lượng dư, nước thải và hóa chất tái sinh của các nhà máy",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "quantity": { "type": "number" },
+        "unit": { "type": "string" },
+        "companyName": { "type": "string" },
+        "industrialZone": { "type": "string" },
+        "province": { "type": "string" },
+        "status": { "type": "string" },
+        "qualitySpecs": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "category", "quantity", "companyName", "industrialZone"]
+    },
+    "contracts": {
+      "title": "Symbiosis Contracts (Hợp đồng cộng sinh)",
+      "description": "Các hợp đồng cộng sinh công nghiệp đã được phê duyệt bởi BQL KCN",
+      "properties": {
+        "id": { "type": "string" },
+        "sourceCompany": { "type": "string" },
+        "targetCompany": { "type": "string" },
+        "resourceName": { "type": "string" },
+        "monthlyVolume": { "type": "number" },
+        "unit": { "type": "string" },
+        "status": { "type": "string" },
+        "approvalDate": { "type": "string" },
+        "co2ReductionTonsYear": { "type": "number" }
+      },
+      "required": ["id", "sourceCompany", "targetCompany", "resourceName"]
+    },
+    "logistics_orders": {
+      "title": "Logistics Permits (Giấy phép vận chuyển)",
+      "description": "Thủ tục điều xe và giấy phép vận chuyển tài nguyên tuần hoàn",
+      "properties": {
+        "id": { "type": "string" },
+        "sourceCompany": { "type": "string" },
+        "targetCompany": { "type": "string" },
+        "resourceName": { "type": "string" },
+        "volumeTons": { "type": "number" },
+        "licensePlate": { "type": "string" },
+        "permitStatus": { "type": "string" },
+        "qrCodeToken": { "type": "string" }
+      },
+      "required": ["id", "sourceCompany", "targetCompany", "resourceName", "permitStatus"]
+    },
+    "auction_items": {
+      "title": "Auction Items (Sàn đấu giá phế liệu B2B)",
+      "description": "Các lô phế phụ phẩm niêm yết đấu giá công khai",
+      "properties": {
+        "id": { "type": "string" },
+        "sellerCompany": { "type": "string" },
+        "resourceName": { "type": "string" },
+        "totalQuantity": { "type": "number" },
+        "unit": { "type": "string" },
+        "startingPriceVnd": { "type": "number" },
+        "currentHighestBidVnd": { "type": "number" },
+        "bidCount": { "type": "number" }
+      },
+      "required": ["id", "sellerCompany", "resourceName", "startingPriceVnd"]
+    }
+  }
+}
